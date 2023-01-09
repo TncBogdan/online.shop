@@ -6,14 +6,14 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
 @Getter
 @Setter
 @RequiredArgsConstructor
 @Entity(name = "clients")
 @EqualsAndHashCode(of = "id")
-public class Client {
+public class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

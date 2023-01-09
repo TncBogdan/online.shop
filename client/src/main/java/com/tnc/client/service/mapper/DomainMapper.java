@@ -5,11 +5,14 @@ import com.tnc.client.service.domain.ClientDomain;
 import org.mapstruct.Mapper;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper(componentModel = "spring")
 public interface DomainMapper {
     Client toEntity(ClientDomain clientDomain);
     ClientDomain toDomain(Client client);
-    List<Client> toEntity(List<ClientDomain> clientDomainList);
-    List<ClientDomain> toDomain(List<Client> clientList);
+    List<Client> toEntityList(List<ClientDomain> clientDomainList);
+    List<ClientDomain> toDomainList(List<Client> clientList);
+
+    ClientDomain toDomainOptional(Optional<Client> byId);
 }
