@@ -15,8 +15,8 @@ import java.util.List;
 import static org.springframework.http.HttpStatus.OK;
 
 @RequiredArgsConstructor
-//@AllArgsConstructor
 @RestController
+@RequestMapping("/client")
 public class ClientController {
 
     private final ClientService clientService;
@@ -43,6 +43,6 @@ public class ClientController {
     @DeleteMapping("/delete/{id}")
     String delete(@PathVariable Long id){
         clientService.delete(id);
-        return "The record with id "+ id + " was deleted";
+        return "The record with id number "+ id + " was deleted";
     }
 }
