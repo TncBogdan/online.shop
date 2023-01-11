@@ -1,6 +1,9 @@
 server:
   port : 8902
 spring:
+  cloud:
+    config:
+      enabled: false
   application:
     name: client.microservice
   datasource:
