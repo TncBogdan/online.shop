@@ -1,8 +1,11 @@
 server:
-  port : 8901
+  port : 8903
 spring:
+  cloud:
+    config:
+      enabled: false
   application:
-    name: product.microservice
+    name: order.microservice
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/online.shop
