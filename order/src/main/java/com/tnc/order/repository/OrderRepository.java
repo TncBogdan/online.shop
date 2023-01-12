@@ -1,5 +1,6 @@
-package com.tnc.order.repository.entity;
+package com.tnc.order.repository;
 
+import com.tnc.order.repository.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

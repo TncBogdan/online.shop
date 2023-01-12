@@ -13,14 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(name = "/order")
+@RequestMapping("/order")
 public class OrderController {
     private final DtoMapperOrder dtoMapperOrder;
     private final OrderService orderService;
 
-    @PostMapping(name = "/add")
+    @PostMapping("/add")
     ResponseEntity<OrderDto>createOrder(@RequestBody OrderDto orderDto){
-        var order = orderService.createOrder(dtoMapperOrder.toDomain(orderDto));
+        var domain_order = dtoMapperOrder.toDomain(orderDto);
+        var order = orderService.createOrder(domain_order);
         return ResponseEntity.ok(dtoMapperOrder.toDto(order));
     }
 }
