@@ -25,12 +25,13 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-gateway</artifactId>
+			<version>4.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<version>4.0.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -39,8 +40,39 @@
 		<dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-test</artifactId>
+			<version>3.5.2</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-core</artifactId>
+			<version>5.7.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-client</artifactId>
+			<version>6.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-security</artifactId>
+			<version>2.2.5.RELEASE</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.okta.sdk</groupId>-->
+<!--			<artifactId>okta-sdk-api</artifactId>-->
+<!--			<version>10.0.0</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.thymeleaf</groupId>-->
+<!--			<artifactId>thymeleaf</artifactId>-->
+<!--			<version>3.1.1.RELEASE</version>-->
+<!--		</dependency>-->
+
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
