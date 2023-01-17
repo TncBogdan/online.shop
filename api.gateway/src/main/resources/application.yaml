@@ -3,16 +3,30 @@ server:
 spring:
   cloud:
     gateway:
+      routes:
+      - id: client.microservice
+        uri: lb://client.microservice
+        predicates:
+        - Path=/client/
+      - id: product.microservice
+        uri: lb://product.microservice
+        predicates:
+        - Path=/product/**
       discovery:
         locator:
           enabled: true
           lowerCaseServiceId: true
   application:
     name: api.gateway
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
-    reactor.netty: DEBUG
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:8181/realms/online-shop-microservices
+#logging:
+#  level:
+#    org.springframework.cloud.gateway: DEBUG
+#    reactor.netty: DEBUG
 eureka:
   client:
     serviceUrl:
