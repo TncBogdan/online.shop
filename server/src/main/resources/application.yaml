@@ -10,8 +10,8 @@ spring:
 eureka:
   username: user
   password: password
-#  username: ${EUREKA_USERNAME:username}
-#  password: ${EUREKA_PASSWORD:password}
+#  username: ${USERNAME:username}
+#  password: ${PASSWORD:password}
   server:
     wait-time-in-ms-when-sync-empty: 0
   client:
