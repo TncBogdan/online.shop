@@ -3,13 +3,23 @@ server:
 spring:
   application:
     name: server.online.shop
-  config:
-    import: optional:configserver:http://localhost:8888
+  cloud:
+    config:
+      import-check:
+        enabled: false
 eureka:
+  username: user
+  password: password
+#  username: ${EUREKA_USERNAME:username}
+#  password: ${EUREKA_PASSWORD:password}
   server:
     wait-time-in-ms-when-sync-empty: 0
   client:
     register-with-eureka: false
     fetch-registry: false
-  instance:
-    hostname: localhost
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+#  instance:
+#    hostname: localhost
+
+

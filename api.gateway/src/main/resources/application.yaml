@@ -1,23 +1,27 @@
 server:
   port: 8900
 spring:
+  application:
+    name: api.gateway
   cloud:
     gateway:
       routes:
       - id: client.microservice
         uri: lb://client.microservice
         predicates:
-        - Path=/client/
+        - Path=/client/**
       - id: product.microservice
         uri: lb://product.microservice
         predicates:
         - Path=/product/**
+      - id: order.microservice
+        uri: lb://order.microservice
+        predicates:
+        - Path=/order/**
       discovery:
         locator:
           enabled: true
           lowerCaseServiceId: true
-  application:
-    name: api.gateway
   security:
     oauth2:
       resource-server:
@@ -30,4 +34,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://user:password@localhost:8761/eureka
