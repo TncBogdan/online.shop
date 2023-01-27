@@ -23,7 +23,7 @@ public class ClientController {
     private final DtoMapper dtoMapper;
 
     @PostMapping("/add")
-    ResponseEntity<ClientDto> addClient(@RequestBody ClientDto clientDto) {
+    ResponseEntity<ClientDto> addClient(@RequestBody ClientDto clientDto) throws Exception {
         ClientDomain client_added = clientService.add(dtoMapper.toDomain(clientDto));
         var newClient = dtoMapper.toDto(client_added);
         return new ResponseEntity<>(newClient, OK);

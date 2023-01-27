@@ -15,4 +15,6 @@ public interface DomainMapper {
     List<ClientDomain> toDomainList(List<Client> clientList);
 
     ClientDomain toDomainOptional(Optional<Client> byId);
+
+    Client toEntity(String userEmail);
 }
