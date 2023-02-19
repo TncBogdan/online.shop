@@ -1,12 +1,8 @@
 package com.tnc.client.service.validation;
 
 import com.tnc.client.repository.ClientRepository;
-import com.tnc.client.service.domain.ClientDomain;
-import com.tnc.client.service.impl.ClientService;
-import com.tnc.client.service.mapper.DomainMapper;
 import lombok.Data;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Service;
 
 import java.rmi.ServerException;
 
@@ -31,6 +27,9 @@ public class ClientValidation {
         if (clientRepository.findByEmail(emailDto) != null) {
             throw new ServerException("Email exist");
         }
+    }
+
+    public void checkIfPhoneNumberExist(String phoneNumber) {
 
     }
 

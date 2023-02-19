@@ -33,18 +33,6 @@ public class ClientServiceImpl implements ClientService {
         return domainMapper.toDomain(saved_client);
     }
 
-//    public void checkIfEmailExist(String emailDto) throws Exception {
-//        if (domainMapper.toDomain(clientRepository.findByEmail(emailDto))!= null) {
-//            //   Add specific exception
-//            throw new ServerException("Email exist");
-//        }
-//    }
-//    public void checkIfEmailExist(String emailDto) throws Exception {
-//        if(domainMapper.toDomain(clientRepository.findByEmail(emailDto))!= null){
-//            System.out.println("Email exist");
-//        }
-//    }
-
     @Override
     public ClientDomain getById(Long id) {
         return domainMapper.toDomain(clientRepository.getReferenceById(id));
@@ -59,6 +47,4 @@ public class ClientServiceImpl implements ClientService {
     public void delete(Long id) {
         clientRepository.deleteById(id);
     }
-
-
 }
