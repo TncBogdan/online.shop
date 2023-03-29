@@ -18,6 +18,11 @@ public class OrderController {
     private final DtoMapperOrder dtoMapperOrder;
     private final OrderService orderService;
 
+    @RequestMapping("/hello")
+    public String hello() {
+        return "Hello from product microservice";
+    }
+
     @PostMapping("/add")
     ResponseEntity<OrderDto>createOrder(@RequestBody OrderDto orderDto){
         var domain_order = dtoMapperOrder.toDomain(orderDto);

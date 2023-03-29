@@ -20,6 +20,11 @@ public class ProductController {
     private final ProductService productService;
     private final DtoMapper dtoMapper;
 
+    @RequestMapping("/hello")
+    public String hello() {
+        return "Hello from product microservice";
+    }
+
     @RequestMapping("/add")
     ResponseEntity<ProductDto> add(@RequestBody ProductDto productDto){
         var prod_domain = productService.add(dtoMapper.toDomain(productDto));

@@ -45,4 +45,9 @@ public class ClientController {
         clientService.delete(id);
         return "The record with id number "+ id + " was deleted";
     }
+
+    @GetMapping("/hello")
+    String hello() {
+        return "Hello from client microservice";
+    }
 }
